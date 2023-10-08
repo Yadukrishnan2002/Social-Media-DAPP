@@ -28,7 +28,7 @@ function TweetBox (){
     }
 
    return(
-     <div className={style.tweetBoxWrapper}>
+    <div className={style.tweetBoxWrapper}>
             <div className={style.tweetBoxLeft}>
                 <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Tom_Cruise_by_Gage_Skidmore_2.jpg/800px-Tom_Cruise_by_Gage_Skidmore_2.jpg" alt="profile image" className={style.profileImage} />
             </div>

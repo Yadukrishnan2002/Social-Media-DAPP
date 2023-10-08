@@ -17,6 +17,14 @@ import { RiFileGifLine, RiBarChartHorizontalFill } from 'react-icons/ri'
 import { IoMdCalendar } from 'react-icons/io'
 import { MdOutlineLocationOn } from 'react-icons/md'
 
+import Posts from '../../components/Posts';
+
+import { BsFillPatchCheckFill } from 'react-icons/bs'
+import { FaRegComment, FaRetweet } from 'react-icons/fa'
+import { AiOutlineHeart } from 'react-icons/ai'
+import { FiShare } from 'react-icons/fi'
+import { format } from 'timeago.js'
+
 const style = {
   wrapper: `flex justify-center h-screen w-screen select-none bg-[#15202b] text-white`,
   content: `max-w-[1400px] w-2/3 flex justify-between`,
@@ -51,6 +59,22 @@ const style = {
     submitGeneral: `px-6 py-2 rounded-3xl font-bold`,
     inactiveSubmit: `bg-[#196195] text-[#95999e]`,
     activeSubmit: `bg-[#1d9bf0] text-white`,
+
+
+    postWrapper: `flex p-3 border-b border-[#38444d]`,
+    profileImage: `rounded-full h-[40px] w-[40px] object-cover`,
+    postMain: `flex-1 px-4`,
+    headerDetails: `flex items-center`,
+    name: `font-bold mr-1`,
+    verified: `text-[0.8rem]`,
+    handleAndTimeAgo: `text-[#8899a6] ml-1`,
+    tweet: `my-2`,
+    image: `rounded-3xl`,
+    footer: `flex justify-between mr-28 mt-4 text-[#8899a6]`,
+    footerIconMessage: `rounded-full text-lg p-2 hover:text-[#1d9bf0] hover:bg-[#1e364a]`,
+    footerIconRetweet: `rounded-full text-lg p-2 hover:text-[#03ba7c] hover:bg-[#1b393b]`,
+    footerIconLike: `rounded-full text-lg p-2 hover:text-[#f91c80] hover:bg-[#39243c]`,
+    footerIconShare: `rounded-full text-lg p-2 hover:text-[#1d9bf0] hover:bg-[#1e364a]`,
 }
 
 
@@ -69,52 +93,9 @@ export default function Home() {
       <div className={style.content}>
         <Sidebar />
 
-        {/* Feed */}
+        <Feed />
 
-        <div className={style.feedWrapper}> 
-            <div className={style.header}>
-                <div className={style.headerTitle}>Home</div> 
-                <BsStars />
-            </div>
-
-            {/* TweetBox */}
-
-
-            <div className={style.tweetBoxWrapper}>
-            <div className={style.tweetBoxLeft}>
-                <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Tom_Cruise_by_Gage_Skidmore_2.jpg/800px-Tom_Cruise_by_Gage_Skidmore_2.jpg" alt="profile image" className={style.profileImage} />
-            </div>
-            <div className={style.tweetBoxRight}> 
-                <form>
-                    <textarea className={style.inputField} 
-                    placeholder="What's happening"
-                    value = {tweetMessge}
-                    onChange={(e) => setTweetMessage(e.target.value)}
-                    />
-                    <div className={style.formLowerContainer}> 
-                        <div className={style.iconsContainer}>
-                            <BsCardImage className={style.icon} />
-                            <RiFileGifLine className={style.icon} />
-                            <RiBarChartHorizontalFill className={style.icon} />
-                            <BsEmojiSmile className={style.icon} />
-                            <IoMdCalendar className={style.icon} />
-                            <MdOutlineLocationOn className={style.icon} />                       
-                        </div>
-                            <button type = "submit" className={`${style.submitGeneral} ${
-                                tweetMessge ? style.activeSubmit : style.inactiveSubmit
-                            }`}
-                            onClick={(event) => postTweet(event)}
-                            >
-                                Tweet
-                            </button>                     
-                    </div>
-                </form>
-            </div>
-     </div>
-
-
-
-        </div>
+        
         
         <h2>Widgets</h2>
       </div> 
