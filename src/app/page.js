@@ -28,7 +28,7 @@ import Widgets from '../../components/Widgets';
 
 const style = {
   wrapper: `flex justify-center h-screen w-screen select-none bg-[#15202b] text-white`,
-  content: `max-w-[1400px] w-2/3 flex justify-between`,
+  content: `max-w-[1400px] w-4/5 flex justify-between`,
   sidebarWrapper: `flex-[0.7] px-8 flex `,
   twitterIconContainer: `text-3xl m-4`,
   tweetButton: `bg-[#1d9bf0] hover:bg-[#1b8cd8] flex items-center justify-center font-bold rounded-3xl h-[50px] mt-[20px] cursor-pointer`,
@@ -114,11 +114,11 @@ export default function Home() {
   return (
     <div className={style.wrapper}>
       <div className={style.content}>
-        <Sidebar />
 
-        <Feed />   
-        
+        <Sidebar />
+        <Feed />    
         <Widgets />
+
       </div> 
     </div>
   )
